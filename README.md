@@ -19,8 +19,8 @@ class NetworkSettings(fieldmarshal.Struct):
 
 class Container(fieldmarshal.Struct):
     network_settings = NetworkSettings
-    id              = str
-    image           = str
+    id               = str
+    image            = str
 
 
 container = Container(id="foo")
