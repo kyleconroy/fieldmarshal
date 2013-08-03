@@ -7,24 +7,35 @@ from nose.tools import assert_equals
 class Foo(Struct):
     id = str
 
-
 class Bar(Struct):
     id = bool
-
 
 class Baz(Struct):
     id = int
 
-
 class Bap(Struct):
     id = None
-
 
 class Nested(Struct):
     foo = Foo
 
 class SuperNested(Struct):
     nested = Nested
+
+class ArrayFoo(Struct):
+    foos = [Foo]
+
+class HashFoo(Struct):
+    foos = dict
+
+
+def test_array():
+    c = ArrayFoo()
+    assert_equals(len(c.foos), 0)
+
+def test_hash():
+    c = HashFoo()
+    assert_equals(c.foos.items(), [])
 
 
 def test_recursive_dumps():

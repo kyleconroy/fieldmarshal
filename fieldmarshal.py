@@ -17,13 +17,15 @@ def _default_value(t):
         return False
     elif t == int:
         return 0
-    elif t == list:
+    elif type(t) == list:
         return []
     elif t == dict or t == set:
         return {}
     elif type(t) == type and issubclass(t, Struct):
         return t()
     else:
+        print t
+        print type(t)
         return None #Bad case
 
 
