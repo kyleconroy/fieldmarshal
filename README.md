@@ -18,7 +18,7 @@ class NetworkSettings(fieldmarshal.Struct):
 
 
 class Container(fieldmarshal.Struct):
-    network_settigs = NetworkSettings
+    network_settings = NetworkSettings
     id              = str
     image           = str
 
@@ -33,7 +33,7 @@ print container.image
 
 print fieldmarshal.dumps(Container)
 # {
-#   "network_settigs": {
+#   "network_settings": {
 #      "ip_address": "",
 #      "ip_prefix_len": 0,
 #      "gateway": "",
